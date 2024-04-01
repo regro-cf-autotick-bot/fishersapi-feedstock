@@ -1,5 +1,5 @@
 {% set name = "fishersapi" %}
-{% set version = "0.3" %}
+{% set version = "1.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fishersapi-{{ version }}.tar.gz
-  sha256: eeb63bb1661a14fea40d578acde051347c4b7e7472111131efeffd37fa3e0252
+  sha256: d1c294e00376d6af3f9f98a51b1425546717cd85ef7f66da96ba608a56460df4
 
 build:
   number: 0
