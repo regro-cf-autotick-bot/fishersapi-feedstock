@@ -7,27 +7,29 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/fishersapi-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fishersapi-{{ version }}.tar.gz
   sha256: eeb63bb1661a14fea40d578acde051347c4b7e7472111131efeffd37fa3e0252
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
   run:
     - fisher
     - numpy
     - pandas
-    - python
+    - python >={{ python_min }}
     - scipy
     - statsmodels
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - fishersapi
     - fishersapi.tests
